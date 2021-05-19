@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/stylesheets/style.css" type="text/css">
+        <title>Details</title>
+    </head>
+    <body>
+        <div id="main-container">
+            <img src="/images/<%= cat.name %>.jpg">
+            <h2 id="name"><%= (cat.name).toUpperCase() %></h2>
+            <h2 id="age"><%= cat.age %> Years Old</h2>
+            <h2 id="fav-food">Favorite Food: <%= (cat.fav_food).toUpperCase() %></h2>
+            <h2 id="fav-spot">Sleeping Spots:
+                <% 
+                    for(let i=0; i<(cat.sleeping_spots).length; i++){ %>
+                        <%= cat.sleeping_spots[i] %>,
+                <%  } %>
+            </h2>
+            <a id="back-btn" href="/cats">Go Back</a>
+        </div>
+    </body>
+</html>
